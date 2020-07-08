@@ -1,7 +1,10 @@
 const { Client, MessageEmbed }= require("discord.js");
 const client = new Client();
 
-const TOKEN = "TOKENHERE";
+const config = require("./prefix.json");
+const prefix = config.prefix;
+
+const TOKEN = config.token;
 client.login(TOKEN);
 
 client.on("ready", () => {
@@ -10,7 +13,7 @@ client.on("ready", () => {
 
 client.on("message", (msg) => {
   let msgData = msg.content.split(" ");
-  if (msgData[0] == "$np") {
+  if (msgData[0] == `${prefix}np`) {
     let member = msg.mentions.members.size ? msg.mentions.members.first() : msg.member;
     if (member.presence.activities[0]) {
       for (let i = 0; i < member.presence.activities.length; i++) {
