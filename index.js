@@ -1,7 +1,7 @@
 const { Client, MessageEmbed }= require("discord.js");
 const client = new Client();
 
-const config = require("./prefix.json");
+const config = require("./config.json");
 const prefix = config.prefix;
 
 const TOKEN = config.token;
