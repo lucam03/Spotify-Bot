@@ -1,9 +1,6 @@
-const keepAlive = require('./server');
-
 const { Client, MessageEmbed }= require("discord.js");
 const client = new Client();
 
-keepAlive();
 const TOKEN = "TOKENHERE";
 client.login(TOKEN);
 
