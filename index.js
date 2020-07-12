@@ -28,7 +28,7 @@ client.on("message", (msg) => {
         let activity = member.presence.activities[i]
         if (activity.name == "Spotify") {
           let songTitle = activity.details;
-          let albumTitle = activity.assets.largeText;
+          let albumTitle = activity.assets ? activity.assets.largeText : null;
           let artistName = activity.state;
           let textToSend = member.displayName + " is now playing **"+ songTitle + "** by **" + artistName + "** on **" + albumTitle + "**";
           msg.channel.send(makeEmbed(member.displayName, songTitle, albumTitle, artistName));
